@@ -11,20 +11,20 @@ class HomeContainer extends React.Component {
 
   render() {
     return (
-      <Home />
+      <Home date={this.props.date}/>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-      games: state.games,
+      date: state.date,
   };
 };
   
 const mapDispatchToProps = dispatch => {
   return {
-    loadGames: () => dispatch(getGames('20181113')),
+    loadGames: () => dispatch(getGames()),
   }
 };
 

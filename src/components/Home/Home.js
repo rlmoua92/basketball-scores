@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 
 import DateList from '../DateList';
 import GameList from '../GameList';
+import { convertDate } from '../../common.js';
 //import Navigation from '../Navigation';
 
 import './Home.scss';
@@ -18,7 +19,7 @@ const Home = (props) => {
           <DateList />
         </Grid>
         <Grid item className="home-content grow-1">
-          <div style={{ padding: ".5em .5em 0" }}>Mon November 12</div>
+          <div style={{ padding: ".5em .5em 0" }}>{convertDate(props.date, "Day Mon Date")}</div>
           <GameList />
         </Grid>
       </Grid>
