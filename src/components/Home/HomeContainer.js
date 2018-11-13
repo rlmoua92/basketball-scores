@@ -24,7 +24,7 @@ const mapStateToProps = state => {
   
 const mapDispatchToProps = dispatch => {
   return {
-    loadGames: () => dispatch(getGames('prod/v1/20181113/scoreboard.json')),
+    loadGames: () => dispatch(getGames('20181113')),
   }
 };
 

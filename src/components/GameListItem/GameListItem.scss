@@ -1,0 +1,16 @@
+@import '../../common.scss';
+
+.game-list-item {
+    padding: .5em;
+    border-bottom: 1px solid grey;
+
+    .winner {
+        font-weight: bold;
+    }
+    &-score {
+        text-align: right;
+    }
+    &-quarter {
+        text-align: right;
+    }    
+}
