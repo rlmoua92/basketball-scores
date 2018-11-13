@@ -2,8 +2,17 @@ $font-stack: 'Roboto', sans-serif;
 
 body {
     font-family: $font-stack;
+    color: #f2f2f2;
 }
 
 .full-height {
     height: 100vh;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.app-header {
+    padding: .25em 0;
 }

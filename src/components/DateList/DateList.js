@@ -1,33 +1,32 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 
 import './DateList.scss';
 
 const DateList = (props) => {
   return (
-    <Grid container className="date-list" wrap="nowrap">
-      <Grid item xs={3}>
+    <div className="date-list">
+      <div className="date-list-item">
         Nov 11
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item selected">
         TODAY
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item">
         Nov 13
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item">
         Nov 14
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item">
         Nov 15
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item">
         Nov 16
-      </Grid>
-      <Grid item xs={3}>
+      </div>
+      <div className="date-list-item">
         Nov 17
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   );
 }
 

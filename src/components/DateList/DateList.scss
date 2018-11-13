@@ -1,1 +1,18 @@
 @import '../../common.scss';
+
+.date-list {
+    padding: 0 .5em;
+    white-space: nowrap;
+    overflow: scroll;
+
+    &-item {
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        font-size: .75em;
+        padding: .5em 0;
+        &.selected {
+            border-bottom: 2px solid blue;
+        }
+    }
+}
