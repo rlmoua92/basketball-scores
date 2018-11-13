@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 
 import DateList from '../DateList';
 import GameList from '../GameList';
@@ -19,7 +18,7 @@ const Home = (props) => {
           <DateList />
         </Grid>
         <Grid item className="home-content grow-1">
-          <Typography variant="subtitle1" style={{ padding: ".5em .5em 0" }}>Mon November 12</Typography>
+          <div style={{ padding: ".5em .5em 0" }}>Mon November 12</div>
           <GameList />
         </Grid>
       </Grid>
