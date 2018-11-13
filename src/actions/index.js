@@ -1,15 +1,23 @@
 import axios from 'axios';
+import { SET_GAMES } from './types';
 
-const apiUrl = 'https://jsonplaceholder.typicode.com';
+const apiUrl = 'https://cors.io/?https://data.nba.com';
 
-/*export const getInfo = () => {
+export const getGames = (path) => {
   return (dispatch) => {
-    return axios.get(`${apiUrl}/users`)
+    return axios.get(`${apiUrl}/${path}`)
       .then(response => {
-        dispatch(setInfo(response.data))
+        dispatch(setGames(response.data.games))
       })
       .catch(error => {
         throw(error);
       });
   };
-};*/
+};
+
+export const setGames = (games) => {
+  return {
+    type: SET_GAMES,
+    games,
+  }
+};
