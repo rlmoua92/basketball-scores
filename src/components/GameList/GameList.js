@@ -10,11 +10,12 @@ const GameList = (props) => {
       {
         props.games.map((game) => {
           return <GameListItem
-                    homeTeam="Philadelphia"
-                    awayTeam="Miami"
-                    homeScore={124}
-                    awayScore={111}
-                    quarter="Final"
+                    homeTeam={game.hTeam.triCode}
+                    awayTeam={game.vTeam.triCode}
+                    homeScore={game.hTeam.score}
+                    awayScore={game.vTeam.score}
+                    quarter={game.startTimeEastern}
+                    key={game.gameId}
                   />;
         })
       }
