@@ -2,8 +2,10 @@
 
 .game-list-item {
     padding: .5em;
-    border-bottom: 1px solid grey;
 
+    &:not(:last-child) {
+        border-bottom: 1px solid grey;
+    }
     .winner {
         font-weight: bold;
     }
