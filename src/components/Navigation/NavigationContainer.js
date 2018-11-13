@@ -1,19 +1,6 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
-import Home from './Home.js';
-
-class HomeContainer extends React.Component {
-  componentWillMount() {
-
-  }
-
-  render() {
-    return (
-      <Home />
-    );
-  }
-}
+import Navigation from './Navigation.js';
 
 const mapStateToProps = state => {
     return {
@@ -30,4 +17,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(HomeContainer);
+)(Navigation);

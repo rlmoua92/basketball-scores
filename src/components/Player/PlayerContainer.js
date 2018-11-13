@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Player from './Game.js';
+import Player from './Player.js';
 
 const mapStateToProps = state => {
     return {
