@@ -5,14 +5,12 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import ConfigureStore from './store/ConfigureStore';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { dateToStr } from '../src/common.js';
 
 import './common.scss';
 
 const today = new Date();
-const dd = today.getDate();
-const mm = today.getMonth() + 1;
-const yyyy = today.getFullYear();
-const date = yyyy.toString() + mm.toString() + dd.toString();
+const date = dateToStr(today);
 const store = ConfigureStore({ date });
 const theme = createMuiTheme({
   palette: {

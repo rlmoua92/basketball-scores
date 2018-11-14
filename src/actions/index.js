@@ -5,9 +5,6 @@ import {
   SET_START_DATE,
   SET_END_DATE,
 } from './types';
-import {
-  convertDate,
-} from '../common.js';
 
 const apiUrl = 'https://cors.io/?https://data.nba.com';
 

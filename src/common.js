@@ -8,10 +8,14 @@ const getMonth = (date) => {
     return parseInt(month) - 1;
 };
 
-const getMonthStr = (date) => {
+const getMonthStr = (date, style="long") => {
     const num = getMonth(date);
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    return months[num];
+    if (style === "long") {
+        return months[num];
+    } else {
+        return months[num].substr(0,3);
+    }
 };
 
 const getYear = (date) => {
@@ -19,7 +23,27 @@ const getYear = (date) => {
     return parseInt(year);
 };
 
-const toDate = (date) => {
+const getDay = (date) => {
+    const newDate = strToDate(date);
+    const dayNum = newDate.getDay();
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[dayNum];
+};
+
+const datesBetween = (startDate, endDate) => {
+    let newStartDate = strToDate(startDate);
+    let newEndDate = strToDate(endDate);
+    let dates = [];
+    while (newStartDate.getTime() !== newEndDate.getTime()) {
+        dates.push(new Date(newStartDate));
+        newStartDate.setDate(newStartDate.getDate() + 1);
+    }
+    dates.push(newStartDate);
+    return dates;
+}
+
+const strToDate = (date) => {
     const year = getYear(date);
     const month = getMonth(date);
     const dateNum = getDate(date);
@@ -27,13 +51,19 @@ const toDate = (date) => {
     return newDate;
 }
 
-const getDay = (date) => {
-    const newDate = toDate(date);
-    const dayNum = newDate.getDay();
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    return days[dayNum];
-};
+const dateToStr = (date) => {
+    let dd = date.getDate();
+    if (dd.toString().length < 2) {
+        dd = "0" + dd.toString();
+    }
+    let mm = date.getMonth() + 1;
+    if (mm.toString().length < 2) {
+        mm = "0" + mm.toString();
+    }
+    const yyyy = date.getFullYear();
+    const dateStr = yyyy.toString() + mm + dd;
+    return dateStr;
+}
 
 export {
     getDate,
@@ -41,4 +71,7 @@ export {
     getMonthStr,
     getYear,
     getDay,
+    datesBetween,
+    strToDate,
+    dateToStr,
 };
