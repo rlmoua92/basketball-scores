@@ -6,7 +6,7 @@ import './GameListItem.scss';
 const GameListItem = (props) => {
   return (
     <Grid container item direction="column" className="game-list-item">
-      <Grid container item direction="row" className="winner">
+      <Grid container item direction="row">
         <Grid item xs={6} className="game-list-team">{props.homeTeam}</Grid>
         <Grid item xs={3} className="game-list-score">{props.homeScore}</Grid>
         <Grid item xs={3} className="game-list-quarter">{props.quarter}</Grid>

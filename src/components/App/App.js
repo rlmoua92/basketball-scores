@@ -9,12 +9,12 @@ import Player from '../Player';
 
 const App = (props) => {
   return (
-    <Grid container className="App full-height" direction="column">
+    <Grid container className="App full-height" direction="column" wrap="nowrap">
       <CssBaseline />
-      <Grid container item className="app-header" alignItems="center" justify="center">
+      <Grid container item className="app-header" alignItems="center" justify="center" xs={1} style={{ maxWidth: "none" }}>
         <Grid item><Basketball style={{ marginRight: ".25em" }} /></Grid><Grid item><span style={{ fontWeight: "bold" }}>Basketball Stats</span></Grid>
       </Grid>
-      <Grid container item className="grow-1">
+      <Grid container item className="grow-1" xs={11} style={{ maxWidth: "none" }}>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/Game/:gameid' component={Game} />
