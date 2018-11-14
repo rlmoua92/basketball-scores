@@ -11,7 +11,10 @@ import './common.scss';
 
 const today = new Date();
 const date = dateToStr(today);
-const store = ConfigureStore({ date });
+const store = ConfigureStore({ 
+  todayDate: date,
+  date: date,
+ });
 const theme = createMuiTheme({
   palette: {
     type: 'dark',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { dateToStr, getMonthStr, getDate } from '../../common.js';
+import { dateToStr, getMonthStr, getDate, strToDate } from '../../common.js';
 
 import './DateList.scss';
 
@@ -8,10 +8,15 @@ const DateList = (props) => {
     let str = dateToStr(a);
     let month = getMonthStr(str, "short");
     let date = getDate(str);
+    let today = strToDate(props.todayDate);
     let divClass = str === props.date ? "date-list-item selected" : "date-list-item";
     return (
       <div className={divClass} key={str} onClick={() => props.onDateClick(str)}>
-        {month + " " + date}
+        {
+          a.getTime() === today.getTime() ?
+          "Today" :
+          month + " " + date
+        }
       </div>
     );
   });

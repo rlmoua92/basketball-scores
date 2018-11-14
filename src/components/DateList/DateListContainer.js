@@ -27,6 +27,7 @@ class DateListContainer extends React.Component {
         endDate={this.props.endDate} 
         allDates={allDates} 
         onDateClick={this.props.onDateClick}
+        todayDate={this.props.todayDate}
       />
     );
   }
@@ -37,6 +38,7 @@ const mapStateToProps = state => {
       date: state.date, 
       startDate: state.startDate,
       endDate: state.endDate,
+      todayDate: state.todayDate,
     };
   };
   
