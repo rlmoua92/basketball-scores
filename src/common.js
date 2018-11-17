@@ -65,6 +65,18 @@ const dateToStr = (date) => {
     return dateStr;
 }
 
+const getOffsetLeft = (className) => {
+    let el = document.getElementsByClassName(className)[0];
+    let offsetLeft = el.offsetLeft;
+    return offsetLeft;
+}
+
+const scrollElementLeft = (containerClassName, itemClassName) => {
+    let offsetLeft = getOffsetLeft(itemClassName);
+    let container = document.getElementsByClassName(containerClassName)[0];
+    container.scrollLeft = offsetLeft;
+}
+
 export {
     getDate,
     getMonth,
@@ -74,4 +86,6 @@ export {
     datesBetween,
     strToDate,
     dateToStr,
+    getOffsetLeft,
+    scrollElementLeft,
 };

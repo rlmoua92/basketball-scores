@@ -6,6 +6,8 @@ import {
   SET_END_DATE,
 } from './types';
 
+import { scrollElementLeft } from '../common.js';
+
 const apiUrl = 'https://cors.io/?https://data.nba.com';
 
 export const getGames = () => {
@@ -41,6 +43,7 @@ export const getDates= () => {
       .then(response => {
         dispatch(setStartDate(response.data.startDateCurrentSeason));
         dispatch(setEndDate(response.data.endDate));
+        scrollElementLeft('date-list','date-list-item selected');
       })
       .catch(error => {
         throw(error);
