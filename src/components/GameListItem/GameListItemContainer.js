@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
       awayTeam: ownProps.awayTeam,
       homeScore: ownProps.homeScore,
       awayScore: ownProps.awayScore,
-      quarter: ownProps.quarter,
+      time: ownProps.time,
     };
   };
   

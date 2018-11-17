@@ -9,24 +9,70 @@ const GameList = (props) => {
     <Grid container direction="column" className="game-list">
       {
         props.games.map((game) => {
-          let date = new Date(game.startTimeUTC);
-          let hour = date.getHours();
-          let period = hour >= 12 ? "PM" : "AM";
-          if (hour > 12) {
-            hour -= 12;
-            hour = hour.toString();
+          let time = "";
+          let gameStatus = game.isGameActivated;
+          if (gameStatus) {
+            if (game.period.isHalftime) {
+              time = "Halftime";
+            } else {
+              let quarter = game.period.current;
+              switch (quarter) {
+                case 1:
+                  quarter = "1st";
+                  break;
+                case 2:
+                  quarter = "2nd";
+                  break;
+                case 3:
+                  quarter = "3rd";
+                  break;
+                case 4:
+                  quarter = "4th";
+                  break;
+                case 5:
+                  quarter = "OT";
+                  break;
+                default:
+                  quarter -= 4;
+                  quarter = quarter.toString() + "OT";
+                  break;
+              }
+              if (game.period.isEndOfPeriod) {
+                time = "End"
+              } else {
+                time = game.clock;
+              }
+              time += " " + quarter;
+            }
+          } else if (game.period.current >= 4) {
+            time = "Final";
+            if (game.period.current === 5) {
+              time += " (OT)";
+            } else if (game.period.current > 5) {
+              let extra = game.period.current - 4;
+              time += " (" + extra.toString() + "OT)"
+            }
+          } else {
+            let date = new Date(game.startTimeUTC);
+            let hour = date.getHours();
+            let period = hour >= 12 ? "PM" : "AM";
+            if (hour > 12) {
+              hour -= 12;
+              hour = hour.toString();
+            }
+            let min = date.getMinutes().toString();
+            if (min.length < 2) {
+              min = "0" + min;
+            }
+            time = hour + ":" + min + " " + period;
           }
-          let min = date.getMinutes().toString();
-          if (min.length < 2) {
-            min = "0" + min;
-          }
-          let time = hour + ":" + min + " " + period;
+          console.log(time);
           return <GameListItem
                     homeTeam={game.hTeam.triCode}
                     awayTeam={game.vTeam.triCode}
                     homeScore={game.hTeam.score}
                     awayScore={game.vTeam.score}
-                    quarter={time}
+                    time={time}
                     key={game.gameId}
                   />;
         })
