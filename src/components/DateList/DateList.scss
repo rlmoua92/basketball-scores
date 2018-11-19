@@ -5,6 +5,10 @@
     white-space: nowrap;
     overflow: scroll;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     &-item {
         display: inline-block;
         width: 20%;
@@ -13,6 +17,10 @@
         padding: .5em 0;
         &.selected {
             border-bottom: 2px solid blue;
+        }
+
+        &:not(.selected):hover {
+            cursor: pointer;
         }
     }
 }
