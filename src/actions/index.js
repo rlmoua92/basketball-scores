@@ -4,6 +4,7 @@ import {
   SET_DATE,
   SET_START_DATE,
   SET_END_DATE,
+  SET_IS_LOADING,
 } from './types';
 
 import { scrollElementLeft } from '../common.js';
@@ -16,6 +17,7 @@ export const getGames = () => {
     return axios.get(`${apiUrl}/prod/v1/${state.date}/scoreboard.json`)
       .then(response => {
         dispatch(setGames(response.data.games));
+        dispatch(setIsLoading(false));
       })
       .catch(error => {
         throw(error);
@@ -64,3 +66,10 @@ export const setEndDate = (date) => {
     date,
   };
 };
+
+export const setIsLoading = (isLoading) => {
+  return {
+    type: SET_IS_LOADING,
+    isLoading,
+  };
+}

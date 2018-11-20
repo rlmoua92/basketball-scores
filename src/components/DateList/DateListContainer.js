@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import DateList from './DateList.js';
-import { getDates, setDate, getGames } from '../../actions/index.js';
+import { getDates, setDate, getGames, setIsLoading } from '../../actions/index.js';
 import { datesBetween } from '../../common.js';
 
 class DateListContainer extends React.Component {
@@ -11,6 +11,7 @@ class DateListContainer extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps.date !== this.props.date) {
+      this.props.setIsLoading(true);
       this.props.loadGames();
     }
   }
@@ -47,6 +48,7 @@ const mapDispatchToProps = dispatch => {
     loadDates: () => dispatch(getDates()),
     onDateClick: (date) => dispatch(setDate(date)),
     loadGames: () => dispatch(getGames()),
+    setIsLoading: (val) => dispatch(setIsLoading(val)),
   };
 };
 

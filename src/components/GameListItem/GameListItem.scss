@@ -6,6 +6,13 @@
     &:not(:last-child) {
         border-bottom: 1px solid grey;
     }
+
+    @media screen and (min-width: $md) {
+        &:last-child {
+            border-bottom: 1px solid grey;
+        } 
+    }
+
     .winner {
         .game-list-item-team, .game-list-item-score {
             font-weight: bold;

@@ -4,6 +4,7 @@ import date from './date';
 import startDate from './startDate';
 import endDate from './endDate';
 import todayDate from './todayDate';
+import isLoading from './isLoading';
 
 const rootReducer = combineReducers({
     games,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     startDate,
     endDate,
     todayDate,
+    isLoading,
 });
 
 export default rootReducer;
