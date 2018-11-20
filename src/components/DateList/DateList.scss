@@ -43,7 +43,26 @@
         @media screen and (min-width: $md) {
             & {
                 display: inline-block;
+                position: absolute;
+                bottom: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &.control-left {
+                left: 0;
+            }
+
+            &.control-right {
+                right: 0;
             }
         }
+    }
+
+    @media screen and (min-width: $md) {
+        width: calc(100% - 50px);
+        margin: 0 auto;
     }
 }

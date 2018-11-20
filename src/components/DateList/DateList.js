@@ -23,11 +23,9 @@ const DateList = (props) => {
   
   return (
     <div className="date-list">
-      <div className="date-list-control control-left"></div>
       {
         dateListItems
       }
-      <div className="date-list-control control-right"></div>
     </div>
   );
 }
