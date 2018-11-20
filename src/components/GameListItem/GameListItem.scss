@@ -7,7 +7,22 @@
         border-bottom: 1px solid grey;
     }
     .winner {
-        font-weight: bold;
+        .game-list-item-team, .game-list-item-score {
+            font-weight: bold;
+        }
+    }
+    &-team {
+
+        .team-logo {
+            display: inline-block;
+            width: 25px;
+            margin-right: .5em;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
     }
     &-score {
         text-align: right;

@@ -11,6 +11,8 @@ const GameList = (props) => {
         props.games.map((game) => {
           let time = "";
           let gameStatus = game.isGameActivated;
+          let homeScore = game.hTeam.score;
+          let awayScore = game.vTeam.score;
           if (gameStatus && game.period.current > 0) {
             if (game.period.isHalftime) {
               time = "Halftime";
@@ -65,13 +67,14 @@ const GameList = (props) => {
               min = "0" + min;
             }
             time = hour + ":" + min + " " + period;
+            homeScore = "--";
+            awayScore = "--";
           }
-          console.log(time);
           return <GameListItem
                     homeTeam={game.hTeam.triCode}
                     awayTeam={game.vTeam.triCode}
-                    homeScore={game.hTeam.score}
-                    awayScore={game.vTeam.score}
+                    homeScore={homeScore}
+                    awayScore={awayScore}
                     time={time}
                     key={game.gameId}
                   />;

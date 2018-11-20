@@ -9,12 +9,12 @@ const GameListItem = (props) => {
   return (
     <Grid container item xs={12} md={6} direction="column" className="game-list-item">
       <Grid container item direction="row" className={homeClass}>
-        <Grid item xs={6} className="game-list-item-team">{props.homeTeam}</Grid>
+        <Grid container item xs={6} alignItems="center" className="game-list-item-team"><span className="team-logo"><img src={"https://www.nba.com/assets/logos/teams/secondary/web/" + props.homeTeam + ".svg"} alt={props.homeTeam} /></span>{props.homeTeam}</Grid>
         <Grid item xs={3} className="game-list-item-score">{props.homeScore}</Grid>
         <Grid item xs={3} className="game-list-item-time">{props.time}</Grid>
       </Grid>
       <Grid container item direction="row" className={awayClass}>
-        <Grid item xs={6} className="game-list-item-team">{props.awayTeam}</Grid>
+        <Grid container item xs={6} alignItems="center" className="game-list-item-team"><span className="team-logo"><img src={"https://www.nba.com/assets/logos/teams/secondary/web/" + props.awayTeam + ".svg"} alt={props.awayTeam} /></span>{props.awayTeam}</Grid>
         <Grid item xs={3} className="game-list-item-score">{props.awayScore}</Grid>
         <Grid item xs={3} className="game-list-item-time"></Grid>
       </Grid>
