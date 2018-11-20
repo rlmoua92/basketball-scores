@@ -12,8 +12,8 @@ const GameList = (props) => {
         props.games.map((game) => {
           let time = "";
           let gameStatus = game.isGameActivated;
-          let homeScore = game.hTeam.score;
-          let awayScore = game.vTeam.score;
+          let homeScore = parseInt(game.hTeam.score);
+          let awayScore = parseInt(game.vTeam.score);
           if (gameStatus && game.period.current > 0) {
             if (game.period.isHalftime) {
               time = "Halftime";
