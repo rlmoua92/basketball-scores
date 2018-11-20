@@ -2,4 +2,10 @@
 
 .game-list {
     color: #fff;
+
+    @media screen and (min-width: $md) {
+        & {
+            justify-content: space-between;
+        }
+    }
 }

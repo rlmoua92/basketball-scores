@@ -1,26 +1,36 @@
 @import '../../common.scss';
 
-.loading-block-item {
-    padding: .5em;
-
-    &:not(:last-child) {
-        border-bottom: 1px solid grey;
-    }
+.loading-block {
 
     @media screen and (min-width: $md) {
-        &:last-child {
+        justify-content: space-between;
+    }
+    &-item {
+        padding: .5em;
+
+        &:not(:last-child) {
             border-bottom: 1px solid grey;
         }
-    }
-    
-    &-content {
-        display: block;
-        content: " ";
-        width: 99%;
-        height: 1.25rem;
-        background-color: grey;
-        border-radius: .25em;
-        margin-bottom: .25em;
-        opacity: .25;
+
+        @media screen and (min-width: $md) {
+            & {
+                flex-basis: 49% !important;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid grey;
+            }
+        }
+
+        &-content {
+            display: block;
+            content: " ";
+            width: 99%;
+            height: 1.25rem;
+            background-color: grey;
+            border-radius: .25em;
+            margin-bottom: .25em;
+            opacity: .25;
+        }
     }
 }
