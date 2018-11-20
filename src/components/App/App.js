@@ -12,7 +12,12 @@ const App = (props) => {
     <Grid container className="App full-height" direction="column" wrap="nowrap">
       <CssBaseline />
       <Grid container item className="app-header" alignItems="center" justify="center" xs={1} style={{ maxWidth: "none" }}>
-        <Grid item><Basketball style={{ marginRight: ".25em" }} /></Grid><Grid item><span style={{ fontWeight: "bold" }}>Basketball Stats</span></Grid>
+        <Grid item>
+          <Basketball style={{ marginRight: ".25em" }} className="app-icon" />
+        </Grid>
+        <Grid item>
+          <span className="app-name" style={{ fontWeight: "bold" }}>Basketball Stats</span>
+        </Grid>
       </Grid>
       <Grid container item className="grow-1" xs={11} style={{ maxWidth: "none" }}>
         <Switch>
