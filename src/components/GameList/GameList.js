@@ -6,12 +6,12 @@ import './GameList.scss';
 
 const GameList = (props) => {
   return (
-    <Grid container direction="column" className="game-list">
+    <Grid container direction="row" className="game-list">
       {
         props.games.map((game) => {
           let time = "";
           let gameStatus = game.isGameActivated;
-          if (gameStatus) {
+          if (gameStatus && game.period.current > 0) {
             if (game.period.isHalftime) {
               time = "Halftime";
             } else {
