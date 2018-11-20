@@ -1,0 +1,26 @@
+@import '../../common.scss';
+
+.loading-block-item {
+    padding: .5em;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid grey;
+    }
+
+    @media screen and (min-width: $md) {
+        &:last-child {
+            border-bottom: 1px solid grey;
+        }
+    }
+    
+    &-content {
+        display: block;
+        content: " ";
+        width: 99%;
+        height: 1.25rem;
+        background-color: grey;
+        border-radius: .25em;
+        margin-bottom: .25em;
+        opacity: .25;
+    }
+}

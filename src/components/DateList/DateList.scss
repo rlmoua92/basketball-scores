@@ -1,0 +1,49 @@
+@import '../../common.scss';
+
+.date-list {
+    padding: 0 .5em;
+    white-space: nowrap;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &-item {
+        display: inline-block;
+        text-align: center;
+        font-size: .75em;
+        font-weight: bold;
+        padding: .5em 0;
+        margin-right: 2em;
+
+        &:not(.selected):hover {
+            cursor: pointer;
+            opacity: .5;
+        }
+
+        &.selected {
+            border-bottom: 2px solid blue;
+        }
+
+        &:not(.selected):hover {
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: $md) {
+            & {
+                font-size: .825em;
+            }
+        }
+    }
+
+    &-control {
+        display: none;
+
+        @media screen and (min-width: $md) {
+            & {
+                display: inline-block;
+            }
+        }
+    }
+}

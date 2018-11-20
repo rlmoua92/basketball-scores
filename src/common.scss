@@ -1,9 +1,32 @@
 $font-stack: 'Roboto', sans-serif;
+$sm: 600px;
+$md: 960px;
+$lg: 1280px;
+$xl: 1920px;
 
 body {
     font-family: $font-stack;
+    color: #f2f2f2;
 }
 
 .full-height {
     height: 100vh;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.app-header {
+    padding: .25em 0;
+
+    @media screen and (min-width: $md) {
+        .app-icon {
+            vertical-align: middle;
+            font-size: 2rem;
+        }
+        .app-name {
+            font-size: 2rem;
+        }
+    }
 }
