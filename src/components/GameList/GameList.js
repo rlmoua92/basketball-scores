@@ -8,6 +8,7 @@ const GameList = (props) => {
   return (
     <Grid container direction="row" className="game-list">
       {
+        props.games.length ?
         props.games.map((game) => {
           let time = "";
           let gameStatus = game.isGameActivated;
@@ -78,7 +79,10 @@ const GameList = (props) => {
                     time={time}
                     key={game.gameId}
                   />;
-        })
+        }) : 
+        <div style={{ padding: ".5em" }}>
+          There are no games today.
+        </div>
       }
     </Grid>
   );
