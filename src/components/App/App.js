@@ -16,7 +16,7 @@ const App = (props) => {
           <Basketball style={{ marginRight: ".25em" }} className="app-icon" />
         </Grid>
         <Grid item>
-          <span className="app-name" style={{ fontWeight: "bold" }}>Basketball Stats</span>
+          <span className="app-name" style={{ fontWeight: "bold" }}>Basketball Scores</span>
         </Grid>
       </Grid>
       <Grid container item className="grow-1" xs={11} style={{ maxWidth: "none" }}>
