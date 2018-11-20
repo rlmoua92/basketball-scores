@@ -7,7 +7,7 @@ const GameListItem = (props) => {
   let homeClass = props.homeScore > props.awayScore ? "winner" : "";
   let awayClass = props.awayScore > props.homeScore ? "winner" : "";
   return (
-    <Grid container item direction="column" className="game-list-item">
+    <Grid container item xs={12} md={6} direction="column" className="game-list-item">
       <Grid container item direction="row" className={homeClass}>
         <Grid item xs={6} className="game-list-item-team">{props.homeTeam}</Grid>
         <Grid item xs={3} className="game-list-item-score">{props.homeScore}</Grid>
