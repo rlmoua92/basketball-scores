@@ -8,6 +8,11 @@
     }
 
     @media screen and (min-width: $md) {
+        & {
+            font-size: 1.125em;
+            flex-basis: 49% !important;
+        }
+        
         &:last-child {
             border-bottom: 1px solid grey;
         } 

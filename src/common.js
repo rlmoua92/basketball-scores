@@ -79,7 +79,15 @@ const scrollElementLeft = (containerClassName, itemClassName) => {
 
 const scrollElementLeftByX = (containerClassName, x) => {
     let container = document.getElementsByClassName(containerClassName)[0];
-    container.scrollLeft += x;
+    let scrollLeft = container.scrollLeft;
+    let smoothScroll = setInterval(frame, 20);
+    function frame() {
+        if ((x > 0 && container.scrollLeft < scrollLeft + x) || (x < 0 && container.scrollLeft > scrollLeft + x)) {
+            container.scrollLeft = container.scrollLeft + (x / 10);
+        } else {
+            clearInterval(smoothScroll);
+        }
+    }
 }
 
 export {
