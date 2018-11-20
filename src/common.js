@@ -74,7 +74,7 @@ const getOffsetLeft = (className) => {
 const scrollElementLeft = (containerClassName, itemClassName) => {
     let offsetLeft = getOffsetLeft(itemClassName);
     let container = document.getElementsByClassName(containerClassName)[0];
-    container.scrollLeft = offsetLeft;
+    container.scrollLeft = offsetLeft - container.offsetLeft;
 }
 
 export {
