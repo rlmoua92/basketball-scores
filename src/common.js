@@ -77,6 +77,11 @@ const scrollElementLeft = (containerClassName, itemClassName) => {
     container.scrollLeft = offsetLeft - container.offsetLeft;
 }
 
+const scrollElementLeftByX = (containerClassName, x) => {
+    let container = document.getElementsByClassName(containerClassName)[0];
+    container.scrollLeft += x;
+}
+
 export {
     getDate,
     getMonth,
@@ -88,4 +93,5 @@ export {
     dateToStr,
     getOffsetLeft,
     scrollElementLeft,
+    scrollElementLeftByX,
 };

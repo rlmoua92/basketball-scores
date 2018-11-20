@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import ArrowRight from '@material-ui/icons/ArrowRight';
+import ArrowLeft from '@material-ui/icons/ArrowLeft';
 
 import DateList from './DateList.js';
 import { getDates, setDate, getGames, setIsLoading } from '../../actions/index.js';
-import { datesBetween } from '../../common.js';
+import { datesBetween, scrollElementLeftByX } from '../../common.js';
 
 class DateListContainer extends React.Component {
   componentDidMount() {
@@ -16,20 +18,28 @@ class DateListContainer extends React.Component {
     }
   }
 
+  scrollDates(x) {
+    scrollElementLeftByX('date-list', x);
+  }
+
   render() {
     let allDates = [];
     if (this.props.startDate && this.props.endDate) {
       allDates = datesBetween(this.props.startDate, this.props.endDate);
     }
     return (
-      <DateList 
-        date={this.props.date} 
-        startDate={this.props.startDate} 
-        endDate={this.props.endDate} 
-        allDates={allDates} 
-        onDateClick={this.props.onDateClick}
-        todayDate={this.props.todayDate}
-      />
+      <div>
+        <div className="date-list-control control-left" onClick={() => this.scrollDates(-500)}><ArrowLeft /></div>
+        <DateList 
+          date={this.props.date} 
+          startDate={this.props.startDate} 
+          endDate={this.props.endDate} 
+          allDates={allDates} 
+          onDateClick={this.props.onDateClick}
+          todayDate={this.props.todayDate}
+        />
+        <div className="date-list-control control-right" onClick={() => this.scrollDates(500)}><ArrowRight /></div>
+      </div>
     );
   }
 }

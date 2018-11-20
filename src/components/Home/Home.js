@@ -19,7 +19,7 @@ const Home = (props) => {
         {/*<Grid item>
           <Navigation />
         </Grid>*/}
-        <Grid item style={{ width: "100%", maxWidth: "1024px", margin: "0 auto" }}>
+        <Grid item style={{ width: "100%", maxWidth: "1024px", margin: "0 auto", position: "relative" }}>
           <DateList />
         </Grid>
         <Grid container item className="home-content grow-1">
