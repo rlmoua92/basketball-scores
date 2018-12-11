@@ -18,6 +18,10 @@ const store = ConfigureStore({
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
+    background: {
+      paper: '#030303',
+      default: '#000',
+    }
   },
 });
 

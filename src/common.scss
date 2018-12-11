@@ -1,12 +1,14 @@
 $font-stack: 'Roboto', sans-serif;
+$text-color: #f2f2f2;
 $sm: 600px;
 $md: 960px;
 $lg: 1280px;
 $xl: 1920px;
+$header-bg-color: #303030;
 
 body {
     font-family: $font-stack;
-    color: #f2f2f2;
+    color: $text-color;
 }
 
 .full-height {
@@ -19,6 +21,7 @@ body {
 
 .app-header {
     padding: .25em 0;
+    background-color: $header-bg-color;
 
     @media screen and (min-width: $md) {
         .app-icon {
