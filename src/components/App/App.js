@@ -17,14 +17,16 @@ const App = (props) => {
   return (
     <Grid container className="App full-height" direction="column" wrap="nowrap">
       <CssBaseline />
-      <Grid container item className="app-header" alignItems="center" justify="center" xs={1} style={{ maxWidth: "none" }}>
-        <Grid item>
-          <Basketball style={{ marginRight: ".25em" }} className="app-icon" />
+      <Grid container item className="app-header" alignItems="center" justify="center" style={{ maxWidth: "none" }}>
+        <Grid container justify="center" alignItems="center" item xs={12}>
+          <Grid item>
+            <Basketball style={{ marginRight: ".25em" }} className="app-icon" />
+          </Grid>
+          <Grid item>
+            <span className="app-name" style={{ fontWeight: "bold" }}>Basketball Scores</span>
+          </Grid>
         </Grid>
-        <Grid item>
-          <span className="app-name" style={{ fontWeight: "bold" }}>Basketball Scores</span>
-        </Grid>
-        <Grid item style={{ width: "100%", maxWidth: "1024px", margin: "0 auto", position: "relative" }}>
+        <Grid item style={{ width: "100%", maxWidth: "1024px", margin: "0 auto", position: "relative" }} xs={12}>
           <Switch>
             <Route exact path={homePath} component={DateList} />
           </Switch>
